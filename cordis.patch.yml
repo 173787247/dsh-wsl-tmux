@@ -1,0 +1,6 @@
+- insert:
+    - id: dsh-wsl-tmux
+      name: dsh-wsl-tmux
+      config:
+        enabled: true
+        timeoutMs: 10000
