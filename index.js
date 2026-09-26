@@ -19,10 +19,10 @@ export function apply(ctx, config = {}) {
 
   ctx.tools.register({
     name: "tmux_status",
-    description: "Whether tmux/screen are on PATH.",
+    description: "Whether tmux/screen are on PATH; version + live session count.",
     parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: JSON.stringify(v) }] },
-    timeoutMs: 5_000,
+    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: JSON.stringify(v, null, 2) }] },
+    timeoutMs: 8_000,
     isConcurrencySafe: () => true,
     async execute() {
       return tmuxStatus();
